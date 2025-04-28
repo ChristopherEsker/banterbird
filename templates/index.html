@@ -3,16 +3,22 @@
 <head>
     <title>Banterbird</title>
     <script src="/static/js/app.js" defer></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Banterbird</h1>
+    <h1>Banterbird 🐦</h1>
     <div>
         Logged in as: <strong id="username">admin</strong>
     </div>
     <div>
         <h3>New Post</h3>
-        <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
+        <div id="tweet">
+            <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
+            <button onclick="submitPost()">Tweet</button>
+        </div>
     </div>
     <hr>
     <h3>Feed</h3>
@@ -20,9 +26,8 @@
 
     <template id="post-template">
         <div class="post">
-            <p><strong class="username"></strong>: <span class="message"></span></p>
+            <p><strong class="username"></strong>: <br> <span class="message"></span></p>
             <small class="timestamp"></small>
-            <hr>
         </div>
     </template>
 </body>
