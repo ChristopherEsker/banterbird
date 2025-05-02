@@ -48,3 +48,14 @@ window.onload = async () => {
     console.error("FIX THISSS:", error);
   }
 };
+
+setInterval(async () => {
+    try {
+      document.getElementById("username").innerText = username;
+      const response = await fetch("/api/posts");
+      const posts = await response.json();
+      posts.forEach((post) => renderPost(post));
+    } catch (error) {
+      console.error("FIX THISSS:", error);
+    }
+}, 5000); // Poll every 5 seconds for new posts
